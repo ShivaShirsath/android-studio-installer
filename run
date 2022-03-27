@@ -5,23 +5,25 @@ PWDx=$PWD
 mkdir /opt
 cd /opt
 
-rm -rf setVer*
-rm -rf version*
+rm -rf setVer
+rm -rf version
 rm -rf studio*
 
 wget https://developer.android.com/studio#downloads
 
 cat studio | grep -o -P '(?<=https://redirector.gvt1.com/edgedl/android/studio/ide-zips/).*(?=-linux.tar.gz)' > setVer
-rm -rf studio*
+rm -rf studio
 
 cat setVer | grep -o -P '(?<=).*(?=/android-studio)' > version
-rm -rf setVer*
+rm -rf setVer
 
 version=$(head -n 1 version)
 rm -rf version
 
 rm -rf android-studio-$version-linux.tar.gz*
+
 wget https://redirector.gvt1.com/edgedl/android/studio/ide-zips/$version/android-studio-$version-linux.tar.gz
+
 sudo tar zxvf android-studio-*
 
 while true; do
