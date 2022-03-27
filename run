@@ -15,7 +15,7 @@ cat studio | grep -o -P '(?<=https://redirector.gvt1.com/edgedl/android/studio/i
 rm -rf studio*
 
 cat setVer | grep -o -P '(?<=).*(?=/android-studio)' > version
-rm -rf setVar*
+rm -rf setVer*
 
 version=$(head -n 1 version)
 rm -rf version
