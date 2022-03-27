@@ -1,6 +1,7 @@
 #!/bin/bash
 
-cd $HOME
+mkdir /opt
+cd /opt
 
 rm -rf setVer*
 rm -rf version*
@@ -19,10 +20,6 @@ rm -rf version
 
 wget https://redirector.gvt1.com/edgedl/android/studio/ide-zips/$version/android-studio-$version-linux.tar.gz
 
-mv android-studio-* $HOME/
-
-cd $HOME
-
 sudo tar zxvf android-studio-*
 
 while true; do
@@ -33,7 +30,7 @@ while true; do
 
         case $? in
                 0 )
-                        bash $HOME/android-studio/bin/studio.sh
+                        bash /opt/android-studio/bin/studio.sh
 
                 break
                 ;;
