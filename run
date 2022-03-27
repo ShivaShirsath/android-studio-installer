@@ -2,6 +2,8 @@
 
 PWDx=$PWD
 
+sudo apt install -y openjdk-11-jdk
+
 mkdir /opt
 cd /opt
 
