@@ -26,6 +26,8 @@ wget https://redirector.gvt1.com/edgedl/android/studio/ide-zips/$version/android
 
 sudo tar zxvf android-studio-*
 
+rm -rf android-studio-$version-linux.tar.gz*
+
 while true; do
         dialog \
                 --title "Open Android Studio" \
