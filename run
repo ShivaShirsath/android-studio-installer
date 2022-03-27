@@ -1,5 +1,7 @@
 #!/bin/bash
 
+PWDx=$PWD
+
 mkdir /opt
 cd /opt
 
@@ -46,3 +48,5 @@ while true; do
                 ;;
         esac
 done
+
+cd PWDx
