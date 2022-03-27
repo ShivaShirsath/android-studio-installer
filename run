@@ -1,0 +1,50 @@
+#!/bin/bash
+
+cd $HOME/android-studio-installer
+
+rm -rf setVer*
+rm -rf version*
+rm -rf studio*
+
+wget https://developer.android.com/studio#downloads
+
+cat studio | grep -o -P '(?<=https://redirector.gvt1.com/edgedl/android/studio/ide-zips/).*(?=-linux.tar.gz)' > setVer
+
+cat setVer | grep -o -P '(?<=).*(?=/android-studio)' > version
+rm -rf setVar*
+
+version=$(head -n 1 version)
+rm -rf version
+
+wget https://redirector.gvt1.com/edgedl/android/studio/ide-zips/$version/android-studio-$version-linux.tar.gz
+
+mv android-studio-* $HOME/
+
+cd $HOME
+
+sudo tar zxvf android-studio-*
+
+while true; do
+        dialog \
+                --title "Open Android Studio" \
+                --clear \
+                --yesno "" 0 0
+
+        case $? in
+                0 )
+                        bash $HOME/android-studio/bin/studio.sh
+
+                break
+                ;;
+                1 )
+                				clear
+                        exit 1
+                break
+                ;;
+                255 )
+                        clear
+                        exit 1
+                break
+                ;;
+        esac
+done
