@@ -5,7 +5,7 @@ Android Studio Installer for linux
   ```bash
   wget -O - https://github.com/ShivaShirsath/android-studio-installer/raw/master/run | bash
   ```
-  ```javascript
+  ```json
   [ if interupt occurs then run again the command ]
   ```
 
