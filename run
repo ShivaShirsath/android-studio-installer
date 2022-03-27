@@ -20,7 +20,7 @@ rm -rf setVer*
 version=$(head -n 1 version)
 rm -rf version
 
-wget https://redirector.gvt1.com/edgedl/android/studio/ide-zips/$version/android-studio-$version-linux.tar.gz
+file=android-studio-$version-linux.tar.gz && [ ! -f $file ] && wget https://redirector.gvt1.com/edgedl/android/studio/ide-zips/$version/$file || echo "$file already exist."
 
 sudo tar zxvf android-studio-*
 
