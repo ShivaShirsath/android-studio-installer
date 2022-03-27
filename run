@@ -24,6 +24,8 @@ file=android-studio-$version-linux.tar.gz && [ ! -f $file ] && wget https://redi
 
 sudo tar zxvf android-studio-*
 
+sleep 1
+
 while true; do
         dialog \
                 --title "Open Android Studio" \
