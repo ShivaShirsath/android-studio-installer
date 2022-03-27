@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd $HOME/android-studio-installer
+cd $HOME
 
 rm -rf setVer*
 rm -rf version*
